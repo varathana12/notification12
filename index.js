@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
   res.send("api2")
 })
 app.post('/webhook/', function(req, res) {
-  console.log(req)
+  console.log(req.body)
   if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN){
     return res.send(req.query['hub.challenge'])
   }
