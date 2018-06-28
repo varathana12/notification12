@@ -18,6 +18,7 @@ app.get('/', function(req, res) {
   res.send("hey there boi")
 })
 app.get('/webhook/', function(req, res) {
+  console.log(req)
   if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN){
     return res.send(req.query['hub.challenge'])
   }
